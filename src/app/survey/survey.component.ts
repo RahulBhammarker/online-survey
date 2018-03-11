@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { SurveyService } from './survey.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-survey',
@@ -7,17 +9,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./survey.component.css']
 })
 export class SurveyComponent implements OnInit {
-  questNum: number;
+  surveyQues;
 
   constructor(
-    private route: ActivatedRoute
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+    public surveyService: SurveyService
   ) { }
 
   ngOnInit() {
-    this.getSurveyQuestion();
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.surveyQues = this.surveyService.getQuestion(paramMap.get('questId'));
+    });
   }
 
-  getSurveyQuestion(): void {
-    this.questNum = +this.route.snapshot.paramMap.get('questNum');
+  goBack() {
+    if (this.surveyService.getPrevQuesId()) {
+      this.location.back();
+    }
+  }
+
+  goNext() {
+    if (this.surveyService.getNextQuesId()) {
+      this.router.navigate(['/survey', this.surveyService.getNextQuesId()]);
+    } else if (this.surveyService.isLastQuestion()) {
+      this.router.navigate(['/summary']);
+    }
   }
 }

@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SurveyComponent } from './survey/survey.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/survey/1', pathMatch: 'full' },
-  { path: 'survey/:questNum', component: SurveyComponent }
+  { path: '', redirectTo: '/survey', pathMatch: 'full' },
+  { path: 'survey', component: SurveyComponent },
+  { path: 'survey/:questId', component: SurveyComponent }
 ];
 
 @NgModule({

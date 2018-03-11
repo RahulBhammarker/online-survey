@@ -7,17 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { SurveyService } from './survey/survey.service';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
-  declarations: [AppComponent, SurveyComponent, NavigationComponent],
+  declarations: [AppComponent, SurveyComponent, SummaryComponent],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SurveyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
