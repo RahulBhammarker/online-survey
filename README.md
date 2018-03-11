@@ -1,19 +1,23 @@
-# OnlineSurvey
+# Online Survey
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` or `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` or `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+It will also generate unit test coverage report. To see the coverage report open the index file located at `coverage/index.html` in the borwser.
 
-## Running end-to-end tests
+## Project Documentation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This project is setup with the automated documentaion.
+To generate the automated documents run `npm run generate-docs` this will generate the project documents under the `documentation/` directory.
+
+Generated documentation can be seen by launching `index.html` from generated coverage folder in your browser. You can also serve documentation on local server just run `npm run serve-docs` and open : `http://127.0.0.1:8080`
