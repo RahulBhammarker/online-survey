@@ -8,13 +8,13 @@ import { SurveyService } from './survey/survey.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router, private suveyService: SurveyService) { }
+  constructor(private router: Router, private surveyService: SurveyService) { }
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
-    this.suveyService.saveToLocalStorage();
+    this.surveyService.saveToLocalStorage();
   }
 
   ngOnInit() {
-    this.router.navigate(['/survey', this.suveyService.getSuveyQuestions()[0].id]);
+    this.router.navigate(['/survey', this.surveyService.getSuveyQuestions()[0].id]);
   }
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProgressBarComponent implements OnInit {
   progressPercent = 0;
-  constructor(private surveyService: SurveyService, private router: Router) { }
+  constructor(public surveyService: SurveyService, private router: Router) { }
 
   ngOnInit() {
     this.router.events.subscribe((val) => this.calculateProgress());

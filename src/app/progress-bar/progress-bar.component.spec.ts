@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ProgressBarComponent } from './progress-bar.component';
+import { SurveyService } from '../survey/survey.service';
+
 
 describe('ProgressBarComponent', () => {
   let component: ProgressBarComponent;
@@ -8,9 +11,11 @@ describe('ProgressBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProgressBarComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ProgressBarComponent],
+      providers: [SurveyService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +26,11 @@ describe('ProgressBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should calculate progress percentage', () => {
+    component.ngOnInit();
+    component.calculateProgress();
+    expect(component.progressPercent).not.toBeNull();
   });
 });

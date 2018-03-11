@@ -47,7 +47,7 @@ export class SurveyService {
 
   getQuestion(id) {
     this.setCurrentQuesId(id - 1);
-    return this.surveyQuestions[id - 1];
+    return this.surveyQuestions[id - 1] ? this.surveyQuestions[id - 1] : {};
   }
 
   saveToLocalStorage() {
