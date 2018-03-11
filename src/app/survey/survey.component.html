@@ -1,3 +1,4 @@
+<a routerLink="/summary">Summary</a>
 <form class="form-basic" action="#" #f="ngForm">
 
   <div class="form-title-row">
@@ -15,9 +16,11 @@
 
     <div class="form-radio-buttons" *ngIf="surveyQues.ansType === 'radio'">
       <div *ngFor="let option of surveyQues.options">
-        <input type="radio" name="answer_of_qestion_{{surveyQues.id}}" (click)="surveyQues.answer = option" [checked]="option === surveyQues.answer"
-        />
-        <label for="{{option}}">{{option}}</label>
+        <label>
+          <input type="radio" name="answer_of_qestion_{{surveyQues.id}}" (click)="surveyQues.answer = option" [checked]="option === surveyQues.answer"
+          />
+          <span>{{option}}</span>
+        </label>
       </div>
     </div>
 

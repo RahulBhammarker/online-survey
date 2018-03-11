@@ -82,6 +82,11 @@ ul li {
     width: 80%;
 }
 
+.form-basic input[type=radio]:hover,
+.form-basic label {
+  cursor: pointer;
+}
+
 .form-basic input[type=checkbox]{
     margin-top: 13px;
 }
