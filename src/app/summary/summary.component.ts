@@ -14,10 +14,10 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     this.surveyQuestions = this.surveyService.getSuveyQuestions();
-    this.calculateQuestionAnswered();
+    this.calculateQuestionsAnswered();
   }
 
-  calculateQuestionAnswered() {
+  calculateQuestionsAnswered() {
     this.questionsAttempted = 0;
     this.surveyQuestions.forEach(element => {
       if (!!element.answer) {
@@ -25,5 +25,4 @@ export class SummaryComponent implements OnInit {
       }
     });
   }
-
 }

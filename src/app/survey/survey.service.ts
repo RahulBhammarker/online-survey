@@ -1,34 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, HostListener } from '@angular/core';
+import survey from '../../assets/survey-mock';
 
 @Injectable()
 export class SurveyService {
-  surveyQuestions = [
-    {
-      id: 1,
-      question: 'Sample Question 1',
-      ansType: 'text',
-      answer: '',
-      isAnswered: ''
-    },
-    {
-      id: 2,
-      question: 'Sample Question 2 with Radio Option',
-      ansType: 'radio',
-      options: ['Radio Option 1', 'Radio Option 2'],
-      answer: '',
-      isAnswered: ''
-    },
-    {
-      id: 3,
-      question: 'Sample Question 3 with Dropdown options',
-      ansType: 'dropdown',
-      options: ['Drop down Option 1', 'Drop down Option 2'],
-      answer: '',
-      isAnswered: ''
-    }
-  ];
+  surveyQuestions = survey;
   currentQuestId;
-  constructor() { }
+
+  constructor() {
+    if (localStorage.getItem('surveyQuestions')) {
+      this.surveyQuestions = JSON.parse(localStorage.getItem('surveyQuestions'));
+    }
+  }
 
   // For Fetching all the questions from the outside the application like API or Local Storage
   getSuveyQuestions() {
@@ -66,5 +48,9 @@ export class SurveyService {
   getQuestion(id) {
     this.setCurrentQuesId(id - 1);
     return this.surveyQuestions[id - 1];
+  }
+
+  saveToLocalStorage() {
+    localStorage.setItem('surveyQuestions', JSON.stringify(this.surveyQuestions));
   }
 }
