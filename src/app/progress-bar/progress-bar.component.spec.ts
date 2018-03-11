@@ -13,7 +13,7 @@ describe('ProgressBarComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       declarations: [ProgressBarComponent],
-      providers: [SurveyService]
+      providers: [SurveyService] // Using the Servey Service Directly instead of stub as its not accessing any real API as of now
     })
       .compileComponents();
   }));

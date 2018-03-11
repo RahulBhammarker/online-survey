@@ -13,7 +13,7 @@ describe('SurveyComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, FormsModule],
       declarations: [SurveyComponent],
-      providers: [SurveyService]
+      providers: [SurveyService] // Using the Servey Service Directly instead of stub as its not accessing any real API as of now
     })
       .compileComponents();
   }));

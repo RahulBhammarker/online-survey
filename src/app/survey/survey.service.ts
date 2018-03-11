@@ -1,15 +1,23 @@
 import { Injectable, HostListener } from '@angular/core';
 import survey from '../../assets/survey-mock';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SurveyService {
   surveyQuestions = survey;
   currentQuestId;
 
-  constructor() {
+  constructor(private router: Router) {
     if (localStorage.getItem('surveyQuestions')) {
       this.surveyQuestions = JSON.parse(localStorage.getItem('surveyQuestions'));
     }
+    if (localStorage.getItem('surveyCurrentQuestionId')) {
+      console.log(typeof localStorage.getItem('surveyCurrentQuestionId'));
+      setTimeout(() => {
+        router.navigate(['/survey', +localStorage.getItem('surveyCurrentQuestionId') + +1]);
+      });
+    }
+
   }
 
   // For Fetching all the questions from the outside the application like API or Local Storage
@@ -50,7 +58,12 @@ export class SurveyService {
     return this.surveyQuestions[id - 1] ? this.surveyQuestions[id - 1] : {};
   }
 
-  saveToLocalStorage() {
-    localStorage.setItem('surveyQuestions', JSON.stringify(this.surveyQuestions));
+  saveToLocalStorage(localStorageSkip: Boolean) {
+    if (localStorageSkip) {
+      localStorage.clear();
+    } else {
+      localStorage.setItem('surveyQuestions', JSON.stringify(this.surveyQuestions));
+      localStorage.setItem('surveyCurrentQuestionId', JSON.stringify(this.currentQuestId));
+    }
   }
 }
