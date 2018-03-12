@@ -517,7 +517,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/survey/survey.service.ts:40</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/survey/survey.service.ts:39</a></div>
                                         </td>
                                     </tr>
             
@@ -554,7 +554,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/survey/survey.service.ts:44</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/survey/survey.service.ts:43</a></div>
                                         </td>
                                     </tr>
             
@@ -591,7 +591,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/survey/survey.service.ts:48</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/survey/survey.service.ts:47</a></div>
                                         </td>
                                     </tr>
             
@@ -628,7 +628,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/survey/survey.service.ts:56</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/survey/survey.service.ts:55</a></div>
                                         </td>
                                     </tr>
             
@@ -693,7 +693,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/survey/survey.service.ts:24</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/survey/survey.service.ts:23</a></div>
                                         </td>
                                     </tr>
             
@@ -730,7 +730,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/survey/survey.service.ts:52</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/survey/survey.service.ts:51</a></div>
                                         </td>
                                     </tr>
             
@@ -767,7 +767,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/survey/survey.service.ts:61</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/survey/survey.service.ts:60</a></div>
                                         </td>
                                     </tr>
             
@@ -836,7 +836,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/survey/survey.service.ts:36</a></div>
+                                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/survey/survey.service.ts:35</a></div>
                                         </td>
                                     </tr>
             
@@ -935,7 +935,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <i>Default value : </i><code>survey</code>
+                                        <i>Default value : </i><code>surveys</code>
                                     </td>
                                 </tr>
                                     <tr>
@@ -954,12 +954,12 @@
 
     <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, HostListener } from &#x27;@angular/core&#x27;;
-import survey from &#x27;../../assets/survey-mock&#x27;;
+import surveys from &#x27;../../assets/survey-mock&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 
 @Injectable()
 export class SurveyService {
-  surveyQuestions &#x3D; survey;
+  surveyQuestions &#x3D; surveys;
   currentQuestId;
 
   constructor(private router: Router) {
@@ -967,7 +967,6 @@ export class SurveyService {
       this.surveyQuestions &#x3D; JSON.parse(localStorage.getItem(&#x27;surveyQuestions&#x27;));
     }
     if (localStorage.getItem(&#x27;surveyCurrentQuestionId&#x27;)) {
-      console.log(typeof localStorage.getItem(&#x27;surveyCurrentQuestionId&#x27;));
       setTimeout(() &#x3D;&gt; {
         router.navigate([&#x27;/survey&#x27;, +localStorage.getItem(&#x27;surveyCurrentQuestionId&#x27;) + +1]);
       });
