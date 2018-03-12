@@ -1,0 +1,39 @@
+<form class="form-basic" action="#" #f="ngForm">
+
+  <div class="form-title-row">
+    <h1>Question {{surveyQues.id}}</h1>
+  </div>
+
+  <div class="form-row">
+    <span name="question">{{surveyQues.question}}</span>
+  </div>
+
+  <div class="form-row">
+    <textarea name="answer_of_qestion_{{surveyQues.id}}" *ngIf="surveyQues.ansType === 'text-area'"></textarea>
+
+    <input type="{{surveyQues.ansType}}" name="answer_of_qestion_{{surveyQues.id}}" *ngIf="surveyQues.ansType === 'text'" [(ngModel)]="surveyQues.answer">
+
+    <div class="form-radio-buttons" *ngIf="surveyQues.ansType === 'radio'">
+      <div *ngFor="let option of surveyQues.options">
+        <label>
+          <input type="radio" name="answer_of_qestion_{{surveyQues.id}}" (click)="surveyQues.answer = option" [checked]="option === surveyQues.answer"
+          />
+          <span>{{option}}</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-row" *ngIf="surveyQues.ansType === 'dropdown'">
+      <label>
+        <select name="dropdown" name="answer_of_qestion_{{surveyQues.id}}" [(ngModel)]="surveyQues.answer">
+          <option *ngFor="let option of surveyQues.options" value="{{option}}">{{option}}</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="form-button-row">
+    <button (click)="goBack()" class="pull-left">Back</button>
+    <button (click)="goNext()" class="pull-right" [disabled]="!surveyQues.answer" [title]="!surveyQues.answer ? 'Answer is Mandatory': ''">{{surveyService.isLastQuestion() ? 'Summary' : 'Next'}}</button>
+  </div>
+</form>
