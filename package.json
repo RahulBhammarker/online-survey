@@ -10,7 +10,7 @@
     "test-dev": "ng test",
     "test": "ng test --single-run --code-coverage",
     "lint": "ng lint",
-    "generate-docs": "compodoc -p src/tsconfig.app.json",
+    "generate-docs": "compodoc -p src/tsconfig.app.json -d docs/documentation",
     "serve-docs": "compodoc -s src/tsconfig.app.json"
   },
   "private": true,
