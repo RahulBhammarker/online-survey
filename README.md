@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
+Demo link : https://rahulbhammarker.github.io/online-survey
+
+Project Unit Test Coverage Report : https://rahulbhammarker.github.io/online-survey/coverage
+
+Project Documentations : https://rahulbhammarker.github.io/online-survey/documentation
+
 ## Development server
 
 Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -9,6 +15,10 @@ Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:42
 ## Build
 
 Run `ng build` or `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Project Seed Mock Data
+This project uses the mock data which is used to bootstrap the application. The seed data can be found in `src/assets/survey-mock.ts` file.
+Feel free to manuplate this file to get the desired result of survey questions.
 
 ## Running unit tests
 
@@ -21,8 +31,3 @@ This project is setup with the automated documentaion.
 To generate the automated documents run `npm run generate-docs` this will generate the project documents under the `documentation/` directory.
 
 Generated documentation can be seen by launching `index.html` from generated coverage folder in your browser. You can also serve documentation on local server just run `npm run serve-docs` and open : `http://127.0.0.1:8080`
-
-
-## Project Seed Mock Data
-This project uses the mock data which is used to bootstrap the application. The seed data can be found in `src/assets/survey-mock.ts` file.
-Feel free to manuplate this file to get the desired result of survey questions.
