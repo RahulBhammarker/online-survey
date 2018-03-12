@@ -14,6 +14,21 @@ ul li {
     display:inline;
 }
 
+footer {
+    text-align:center
+}
+
+.footer a {
+    text-decoration: none;
+    margin: 0;
+    color: #6caee0;
+}
+
+.footer .love {
+    color: red;
+}
+
+
 .form-basic{
     max-width: 80%;
     margin: 10% auto;
