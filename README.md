@@ -25,9 +25,13 @@ Feel free to manuplate this file to get the desired result of survey questions.
 Run `ng test` or `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 It will also generate unit test coverage report. To see the coverage report open the index file located at `coverage/index.html` in the borwser.
 
-## Project Documentation
+or visit : https://rahulbhammarker.github.io/online-survey/coverage
+
+## Project Documentation**
 
 This project is setup with the automated documentaion.
 To generate the automated documents run `npm run generate-docs` this will generate the project documents under the `documentation/` directory.
 
 Generated documentation can be seen by launching `index.html` from generated coverage folder in your browser. You can also serve documentation on local server just run `npm run serve-docs` and open : `http://127.0.0.1:8080`
+
+or visit : https://rahulbhammarker.github.io/online-survey/documentation

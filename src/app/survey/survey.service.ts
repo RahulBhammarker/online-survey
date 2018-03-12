@@ -1,10 +1,10 @@
 import { Injectable, HostListener } from '@angular/core';
-import survey from '../../assets/survey-mock';
+import surveys from '../../assets/survey-mock';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class SurveyService {
-  surveyQuestions = survey;
+  surveyQuestions = surveys;
   currentQuestId;
 
   constructor(private router: Router) {
@@ -12,7 +12,6 @@ export class SurveyService {
       this.surveyQuestions = JSON.parse(localStorage.getItem('surveyQuestions'));
     }
     if (localStorage.getItem('surveyCurrentQuestionId')) {
-      console.log(typeof localStorage.getItem('surveyCurrentQuestionId'));
       setTimeout(() => {
         router.navigate(['/survey', +localStorage.getItem('surveyCurrentQuestionId') + +1]);
       });

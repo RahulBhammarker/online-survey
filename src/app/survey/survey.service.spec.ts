@@ -46,7 +46,7 @@ describe('SurveyService', () => {
   }));
 
   it('should return true if its a last question in sequence', inject([SurveyService], (service: SurveyService) => {
-    service.currentQuestId = 4;
+    service.currentQuestId = service.surveyQuestions.length - 1;
     expect(service.isLastQuestion()).toBeTruthy();
   }));
 
